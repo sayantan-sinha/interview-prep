@@ -23,5 +23,5 @@ int total_water(vector<int> arr) {
 int main() {
     vector<int> arr = {0,1,0,2,1,0,3,1,0,1,2};
     int water = total_water(arr);
-    cout << water << endl;
+    cout << "Total Water: " << water << endl;
 }
