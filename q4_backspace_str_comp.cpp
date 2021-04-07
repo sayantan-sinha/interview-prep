@@ -15,23 +15,23 @@ vector<char> check_str(vector<char> str) {
 }
 
 int main() {
-    
+
     string str_s, str_t;
     cin >> str_s >> str_t;
     vector<char> s(str_s.begin(), str_s.end());
     vector<char> t(str_t.begin(), str_t.end());
-    vector<char> op_s = check_str(s);
-    vector<char> op_t = check_str(t);
-    if(op_s == op_t) {
+    s = check_str(s);
+    t = check_str(t);
+    if(s == t) {
         cout << "Same" << endl;
     } else {
         cout << "Different" << endl;
     }
     
-    vector<char>::iterator it = op_s.begin();
+    vector<char>::iterator it = s.begin();
     do {
         cout << *it << " ";
-    } while(++it!=op_s.end());
+    } while(++it!=s.end());
 
     return 0;
 }
