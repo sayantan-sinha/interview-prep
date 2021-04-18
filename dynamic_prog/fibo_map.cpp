@@ -3,12 +3,11 @@
 using namespace std;
 
 int fib(int n, unordered_map<int, int> &memo) {
-	cout << "n: " << n << endl;
+	if(n==1 or n==2) return n-1;
 	unordered_map<int, int>::iterator it;
 	if(memo.count(n) == 0)
 		memo[n] = fib(n-1, memo) + fib(n-2, memo);
 	it = memo.find(n);
-	cout << it->second << endl;
 	return it->second;
 }
 	
