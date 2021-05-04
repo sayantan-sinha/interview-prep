@@ -33,7 +33,7 @@ vector<int> bestSumMemo(int target, vector<int> arr, unordered_map<int, vector<i
 // m = target sum
 // n = length of array
 
-// time: O(n^m * m) 
+// time: O(n*m^2) 
 // space: O(m * m)-> m stack frames each frame storing one copy of res which can be of m length at max
 
 int main() {
