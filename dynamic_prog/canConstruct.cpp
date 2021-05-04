@@ -10,18 +10,21 @@ string rmvString(string target, string prefix) {
 	return target.substr(prefix.size());
 }
 
-bool canConstruct(string target, vector<string> arr) {
+bool canConstruct(string target, vector<string> arr, unordered_map<string, bool> &memo) {
 	
+	if(memo.count(target) != 0) return true;
 	if(target == "") return true;
 	for(auto prefix: arr) {
-		cout << "Prefix: " << prefix << ", Target: " << target << endl;
+//		cout << "Prefix: " << prefix << ", Target: " << target << endl;
 		if(isPrefix(prefix, target)) {
-			if(canConstruct(rmvString(target, prefix), arr))
+			if(canConstruct(rmvString(target, prefix), arr, memo)) {
+				memo[target] = true;
 				return true;
+			}
 		}
 	}
 	
-	cout <<  "Target: " << target << " Not Possible" << endl;
+//	cout <<  "Target: " << target << " Not Possible" << endl;
 	return false;
 }
 
@@ -45,7 +48,9 @@ int main() {
 	}
 	*/
 	
-	result = canConstruct(target, arr);
+	unordered_map<string, bool> memo;
+	
+	result = canConstruct(target, arr, memo);
 	if(result)
 		cout << "Possible" << endl;
 	else
