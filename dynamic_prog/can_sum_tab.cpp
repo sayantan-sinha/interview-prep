@@ -22,12 +22,12 @@ int main () {
 	sum[0] = true;
 	for(int i=0; i<=target; i++) {
 		if(sum[i] == true)
-			for(int j=0; j<=arr.size(); j++) {
-				if(i+arr[j] <= target)
-					sum[i+arr[j]] = true;
+			for(int j: arr) {
+				if(i+j <= target)
+					sum[i+j] = true;
 			}
 	}
 		
-	cout << endl << sum[target] << endl;
+	cout << sum[target] << endl;
 	return 0;
 }
