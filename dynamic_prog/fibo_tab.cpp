@@ -13,10 +13,9 @@ int main() {
 		fib[1]=1;
 		for(int i=1; i<=n-1; i++) {
 			fib[i+1] += fib[i];
-			if(i<n-1) 
-				fib[i+2] += fib[i];
+			fib[i+2] += fib[i];
 		}
+		cout << fib[n] << endl;
 	}
-	cout << fib[n] << endl;
 	return 0;
 }
