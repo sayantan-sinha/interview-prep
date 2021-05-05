@@ -25,7 +25,6 @@ vector<vector<string>> allConstruct(string target, vector<string> arr, unordered
 			}
 		}
 	}
-	
 	memo[target] = res;
 	return res;
 }
