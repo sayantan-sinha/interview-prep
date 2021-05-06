@@ -58,3 +58,9 @@ int main() {
 		
 	return 0;
 }
+
+/*
+m = target.length()
+n = arr.length()
+TC: O(m*n*m) = O(m^2*n)
+*/
